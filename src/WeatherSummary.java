@@ -20,6 +20,12 @@ public class WeatherSummary {
      * @param args command line arguments (ignored)
      */
     public static void main(String[] args) {
+
+        // Implement this method!
+        // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
+        Scanner scan = new Scanner(System.in);
+
+
         //define the variables needed
         double min = Double.MAX_VALUE;
         double max = Double.MIN_VALUE;
@@ -27,8 +33,33 @@ public class WeatherSummary {
         int count = 0;
 
 
-        // Implement this method!
-        // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
-        Scanner scan = new Scanner(System.in);
+        //use a while loop, since hasnextDouble()...
+
+        while(scan.hasNextDouble()) {
+            double temp = scan.nextDouble();
+
+            System.out.println(temp);
+
+            if(temp > max) {
+                max = temp;
+            }
+
+            if(temp < min) {
+
+                min = temp;
+            }
+
+            total += temp;
+
+            count++;
+        }
+
+        System.out.println("Max: " + max);
+
+        System.out.println("Min: " + min);
+
+        System.out.println("Average: " + (total / count));
+
+
     }
 }
