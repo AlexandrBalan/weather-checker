@@ -38,7 +38,6 @@ public class WeatherSummary {
         while(scan.hasNextDouble()) {
             double temp = scan.nextDouble();
 
-            System.out.println(temp);
 
             if(temp > max) {
                 max = temp;
